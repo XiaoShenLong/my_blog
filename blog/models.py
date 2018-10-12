@@ -30,6 +30,8 @@ class Post(models.Model):
         return self.title
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
+    class Meta:
+        ordering = ['-created_time']
     # on_delete
     # on_delete = None,  # 删除关联表中的数据时,当前表与其关联的field的行为
     # on_delete = models.CASCADE,  # 删除关联数据,与之关联也删除

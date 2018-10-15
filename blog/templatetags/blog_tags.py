@@ -12,6 +12,12 @@ def get_recent_posts(num=5):
 def archives():
     return Post.objects.dates('created_time', 'month', order='DESC')
 
+
 @register.simple_tag
 def get_categories():
     return Category.objects.annotate(num_posts=Count('post')).filter(num_posts__gt=0)
+
+@register.simple_tag
+def get_tags():
+    # 记得在顶部引入 Tag model
+    return Tag.objects.annotate(num_posts=Count('post')).filter(num_posts__gt=0)

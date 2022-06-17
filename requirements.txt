@@ -80,7 +80,7 @@ queuelib==1.5.0
 redis==2.10.6
 requests==2.19.1
 rrdtool==0.1.14
-Scrapy==1.5.1
+Scrapy==2.6.1
 scrapy-redis==0.6.8
 selenium==3.14.0
 service-identity==17.0.0
